@@ -1,0 +1,13 @@
+{
+    "github": {
+        "repo": "lmdb"
+    },
+    "pivotal_tracker": {
+        "project": {
+            "id": 923850
+        }
+    },
+    "hipchat": {
+        "room": "zveloTools"
+    }
+}
