@@ -2,22 +2,99 @@ Source: liblmdb
 Priority: extra
 Maintainer: Joel Self <jself@zvelo.com>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.5
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://git.debian.org/collab-maint/liblmdb.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/liblmdb.git;a=summary
+Homepage: http://symas.com/mdb/
+#Vcs-Git: git@github.com:zvelo/lmdb.git
+#Vcs-Browser: https://github.com/zvelo/lmdb
 
 Package: liblmdb-dev
 Section: libdevel
 Architecture: any
-Depends: liblmdbBROKEN (= ${binary:Version})
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: liblmdb0 (= ${binary:Version}), ${misc:Depends}
+Description: Ultra-fast, ultra-compact key-value embedded data store
+ A read-optimized design and performs reads several times faster than
+ other DB engines, several orders of magnitude faster in many cases. It is not a
+ write-optimized design; for heavy random write workloads other DB designs may
+ be more suitable.
+ .
+  * Ordered-map interface (keys are always sorted, supports range lookups)
+  * Fully transactional, full ACID semantics with MVCC.
+  * Reader/writer transactions: readers don't block writers and writers don't
+  block readers. Writers are fully serialized, so writes are always
+  deadlock-free.
+  * Read transactions are extremely cheap, and can be performed using no mallocs
+  or any other blocking calls.
+  * Supports multi-thread and multi-process concurrency, environments may be
+   opened by multiple processes on the same host.
+  * Multiple sub-databases may be created with transactions covering all
+  sub-databases.
+  * Memory-mapped, allowing for zero-copy lookup and iteration.
+  * Maintenance-free, no external process or background cleanup/compaction
+  required.
+  * No application-level caching. LMDB fully exploits the operating system's
+  buffer cache.
+  * 32KB of object code and 6KLOC of C.
+  * Licensed under the OpenLDAP Public License
+ .
+ Development Files
 
-Package: liblmdbBROKEN
+Package: liblmdb-dbg
+Section: debug
+Architecture: any
+Depends: liblmdb0 (= ${binary:Version}), ${misc:Depends}
+Description: Ultra-fast, ultra-compact key-value embedded data store
+ A read-optimized design and performs reads several times faster than
+ other DB engines, several orders of magnitude faster in many cases. It is not a
+ write-optimized design; for heavy random write workloads other DB designs may
+ be more suitable.
+ .
+  * Ordered-map interface (keys are always sorted, supports range lookups)
+  * Fully transactional, full ACID semantics with MVCC.
+  * Reader/writer transactions: readers don't block writers and writers don't
+  block readers. Writers are fully serialized, so writes are always
+  deadlock-free.
+  * Read transactions are extremely cheap, and can be performed using no mallocs
+  or any other blocking calls.
+  * Supports multi-thread and multi-process concurrency, environments may be
+  opened by multiple processes on the same host.
+  * Multiple sub-databases may be created with transactions covering all
+  sub-databases.
+  * Memory-mapped, allowing for zero-copy lookup and iteration.
+  * Maintenance-free, no external process or background cleanup/compaction
+  required.
+  * No application-level caching. LMDB fully exploits the operating system's
+  buffer cache.
+  * 32KB of object code and 6KLOC of C.
+  * Licensed under the OpenLDAP Public License
+ .
+ Debugging Symbols
+
+Package: liblmdb0
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Ultra-fast, ultra-compact key-value embedded data store
+ A read-optimized design and performs reads several times faster than
+ other DB engines, several orders of magnitude faster in many cases. It is not a
+ write-optimized design; for heavy random write workloads other DB designs may
+ be more suitable.
+ .
+  * Ordered-map interface (keys are always sorted, supports range lookups)
+  * Fully transactional, full ACID semantics with MVCC.
+  * Reader/writer transactions: readers don't block writers and writers don't
+  block readers. Writers are fully serialized, so writes are always
+  deadlock-free.
+  * Read transactions are extremely cheap, and can be performed using no mallocs
+  or any other blocking calls.
+  * Supports multi-thread and multi-process concurrency, environments may be
+  opened by multiple processes on the same host.
+  * Multiple sub-databases may be created with transactions covering all
+  sub-databases.
+  * Memory-mapped, allowing for zero-copy lookup and iteration.
+  * Maintenance-free, no external process or background cleanup/compaction
+  required.
+  * No application-level caching. LMDB fully exploits the operating system's
+  buffer cache.
+  * 32KB of object code and 6KLOC of C.
+  * Licensed under the OpenLDAP Public License

@@ -11,3 +11,11 @@
 
 %:
 	dh $@ 
+
+override_dh_strip:
+	dh_strip --dbg-package=liblmdb-dbg
+
+override_dh_auto_install:
+	dh_auto_install -- prefix=/usr
+
+.PHONY: override_dh_strip override_dh_auto_install

@@ -1,5 +1,5 @@
-liblmdb (1.0-1) unstable; urgency=low
+liblmdb (0.9.14~zvelo1) trusty; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
  -- Joel Self <jself@zvelo.com>  Wed, 30 Jul 2014 15:38:12 -0600
