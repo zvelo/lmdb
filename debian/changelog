@@ -2,4 +2,4 @@ liblmdb (0.9.14~zvelo1) trusty; urgency=low
 
   * Initial release
 
- -- Joel Self <jself@zvelo.com>  Wed, 30 Jul 2014 15:38:12 -0600
+ -- Joshua Rubin <jrubin@zvelo.com>  Wed, 30 Jul 2014 15:38:12 -0600
