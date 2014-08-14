@@ -1,3 +1,9 @@
+liblmdb (0.9.14~zvelo1~lucid) lucid; urgency=low
+
+  * Build for lucid
+
+ -- Joshua Rubin <jrubin@zvelo.com>  Thu, 14 Aug 2014 12:20:50 -0700
+
 liblmdb (0.9.14~zvelo1~trusty) trusty; urgency=low
 
   * Build for trusty
