@@ -1,4 +1,4 @@
-liblmdb (0.9.14~zvelo1) trusty; urgency=low
+liblmdb (0.9.14~zvelo1) precise; urgency=low
 
   * Initial release
 
