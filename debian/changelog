@@ -1,4 +1,10 @@
-liblmdb (0.9.14~zvelo1) precise; urgency=low
+liblmdb (0.9.14~zvelo1~trusty) trusty; urgency=low
+
+  * Build for trusty
+
+ -- Joshua Rubin <jrubin@zvelo.com>  Thu, 14 Aug 2014 09:03:08 -0700
+
+liblmdb (0.9.14~zvelo1~precise) precise; urgency=low
 
   * Initial release
 
