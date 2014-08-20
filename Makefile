@@ -26,6 +26,11 @@ SOLIBS	=
 prefix	?= /usr/local
 MAJOR_VERSION = 0
 VERSION = $(MAJOR_VERSION).9.14
+UNAME = $(shell uname)
+LDARG = -soname
+ifeq ($(UNAME), Darwin)
+	LDARG = -install_name
+endif
 
 ########################################################################
 
@@ -65,7 +70,7 @@ liblmdb.so.$(VERSION): liblmdb.so.$(MAJOR_VERSION)
 
 liblmdb.so.$(MAJOR_VERSION): mdb.o midl.o
 #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
-	$(CC) $(LDFLAGS) -W -Wall -pthread -shared -o $@ -Wl,-soname,$@ mdb.o midl.o $(SOLIBS)
+	$(CC) $(LDFLAGS) -W -Wall -pthread -shared -o $@ -Wl,$(LDARG),$@ mdb.o midl.o $(SOLIBS)
 
 mdb_stat: mdb_stat.o liblmdb.a
 mdb_copy: mdb_copy.o liblmdb.a
