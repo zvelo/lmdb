@@ -23,7 +23,7 @@ OPT = -O2 -g
 CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
 LDLIBS	=
 SOLIBS	=
-prefix	= /usr/local
+prefix	?= /usr/local
 MAJOR_VERSION = 0
 VERSION = $(MAJOR_VERSION).9.14
 
